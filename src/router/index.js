@@ -18,7 +18,7 @@ let config = [
     path: '/',
     exact: true,
     component: Loadable({
-      loader: () => import('../components/home/index.js'),
+      loader: () => import('../components/articles/articles.js'),
       loading: loadingComponent,
       delay: 300,
     }),
@@ -54,16 +54,6 @@ let config = [
     }),
   },
   {
-    name: 'timeLine',
-    path: '/timeLine',
-    exact: true,
-    component: Loadable({
-      loader: () => import('../components/timeLine/timeLine.js'),
-      loading: loadingComponent,
-      delay: 300,
-    }),
-  },
-  {
     name: 'message',
     path: '/message',
     exact: true,
@@ -74,31 +64,11 @@ let config = [
     }),
   },
   {
-    name: 'about',
-    path: '/about',
-    exact: true,
-    component: Loadable({
-      loader: () => import('../components/article/article.js'),
-      loading: loadingComponent,
-      delay: 300,
-    }),
-  },
-  {
     name: 'articleDetail',
     path: '/articleDetail',
     exact: true,
     component: Loadable({
       loader: () => import('../components/article/article.js'),
-      loading: loadingComponent,
-      delay: 300,
-    }),
-  },
-  {
-    name: 'project',
-    path: '/project',
-    exact: true,
-    component: Loadable({
-      loader: () => import('../components/project/project.js'),
       loading: loadingComponent,
       delay: 300,
     }),

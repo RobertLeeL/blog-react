@@ -30,13 +30,14 @@ class Layouts extends Component {
 
     let isIndexPage = false;
     if (pathName === '/') {
-      isIndexPage = true;
+      isIndexPage = false;
+      pathName = '/articles';
     }
     return (
       <div className="Layouts">
         {!isIndexPage ? (
           <div>
-            <Nav pathname={this.props.location.pathname} />
+            <Nav pathname={pathName} />
             <Layout className="layout">
               <Content>
                 <Layout style={{ padding: '24px 0', background: '#fff' }}>
@@ -54,7 +55,7 @@ class Layouts extends Component {
               </Content>
             </Layout>
             <Footer style={{ textAlign: 'center', background: '#fff' }}>
-              全栈修炼 ©2018 Created by BiaoChenXuYing
+              个人博客 ©2020 Created by RobertLee
             </Footer>
             <BackTop />
           </div>

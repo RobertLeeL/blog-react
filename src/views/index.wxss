@@ -1,0 +1,23 @@
+.Layouts {
+  margin: 0 auto;
+  text-align: left;
+}
+.Layouts .header {
+  text-align: left;
+}
+.Layouts .ant-layout-header {
+  padding: 0;
+}
+.Layouts .layout {
+  padding: 66px 10px 10px 10px;
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+.logo img {
+  height: 55px;
+  border-radius: 50%;
+}
+.header {
+  text-align: left;
+}
