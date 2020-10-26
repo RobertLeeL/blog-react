@@ -247,13 +247,6 @@ class Nav extends Component {
             }}
           >
             <Row className="container">
-              <Col style={{ width: '25%', float: 'left', lineHeight: '64px' }}>
-                <a href="http://biaochenxuying.cn/main.html">
-                  <div className="logo">
-                    <img src={logo} alt="" />
-                  </div>
-                </a>
-              </Col>
               <Col style={{ textAlign: 'center', width: '50%', float: 'left' }}>
                 <div className="nav-title"> {this.state.navTitle} </div>
               </Col>
@@ -288,13 +281,6 @@ class Nav extends Component {
             }}
           >
             <Row className="container">
-              <Col style={{ width: '120px', float: 'left' }}>
-                <a href="http://biaochenxuying.cn/main.html">
-                  <div className="logo ">
-                    <img src={logo} alt="" />
-                  </div>
-                </a>
-              </Col>
               <Col style={{ width: '780px', float: 'left' }}>
                 <Menu
                   theme="light"
@@ -304,12 +290,6 @@ class Nav extends Component {
                   selectedKeys={[this.state.menuCurrent]}
                   style={{ lineHeight: '64px', borderBottom: 'none' }}
                 >
-                  <Menu.Item key="9">
-                    <Link to="/">
-                      <Icon type="home" theme="outlined" />
-                      首页
-                    </Link>
-                  </Menu.Item>
                   <Menu.Item key="1">
                     <Link to="/articles">
                       <Icon type="ordered-list" theme="outlined" />
@@ -328,28 +308,10 @@ class Nav extends Component {
                       归档
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="7">
-                    <Link to="/project">
-                      <Icon type="database" theme="outlined" />
-                      项目
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="3">
-                    <Link to="/timeLine">
-                      <Icon type="hourglass" theme="outlined" />
-                      历程
-                    </Link>
-                  </Menu.Item>
                   <Menu.Item key="4">
                     <Link to="/message">
                       <Icon type="message" theme="outlined" />
                       留言
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="5">
-                    <Link to="/about">
-                      <Icon type="user" theme="outlined" />
-                      关于
                     </Link>
                   </Menu.Item>
                 </Menu>
@@ -421,11 +383,6 @@ class Nav extends Component {
         >
           <div className="drawer">
             <p onClick={this.onClose}>
-              <Link to="/">
-                <Icon type="home" /> 首页
-              </Link>
-            </p>
-            <p onClick={this.onClose}>
               <Link to="/articles">
                 <Icon type="ordered-list" /> 文章
               </Link>
@@ -441,23 +398,8 @@ class Nav extends Component {
               </Link>
             </p>
             <p onClick={this.onClose}>
-              <Link to="/project">
-                <Icon type="project" onClick={this.showLoginModal} /> 项目
-              </Link>
-            </p>
-            <p onClick={this.onClose}>
-              <Link to="/timeLine">
-                <Icon type="hourglass" onClick={this.showLoginModal} /> 历程
-              </Link>
-            </p>
-            <p onClick={this.onClose}>
               <Link to="/message">
                 <Icon type="message" onClick={this.showLoginModal} /> 留言
-              </Link>
-            </p>
-            <p onClick={this.onClose}>
-              <Link to="/about">
-                <Icon type="user" onClick={this.showLoginModal} /> 关于
               </Link>
             </p>
 
