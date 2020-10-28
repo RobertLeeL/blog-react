@@ -249,7 +249,7 @@ class Nav extends Component {
               <Col style={{ textAlign: 'center', width: '50%', float: 'left' }}>
                 <div className="nav-title"> {this.state.navTitle} </div>
               </Col>
-              <Col style={{ textAlign: 'right', width: '25%', float: 'left' }}>
+              <Col style={{ textAlign: 'right', width: '50%', float: 'left' }}>
                 <div>
                   <Icon
                     type="bars"
@@ -378,7 +378,7 @@ class Nav extends Component {
           closable={false}
           onClose={this.onClose}
           visible={this.state.visible}
-          height={420}
+          height={260}
         >
           <div className="drawer">
             <p onClick={this.onClose}>

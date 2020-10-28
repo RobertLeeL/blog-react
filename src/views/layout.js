@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import { Layout, BackTop } from 'antd';
 import SliderRight from '../components/slider/index';
 import Nav from '../components/nav/nav';
-import Index from '../components/home/index';
 import { isMobileOrPc } from '../utils/utils';
 const { Content, Footer, Sider } = Layout;
 
@@ -28,14 +27,12 @@ class Layouts extends Component {
       isShowSlider = true;
     }
 
-    let isIndexPage = false;
+
     if (pathName === '/') {
-      isIndexPage = false;
       pathName = '/articles';
     }
     return (
       <div className="Layouts">
-        {!isIndexPage ? (
           <div>
             <Nav pathname={pathName} />
             <Layout className="layout">
@@ -59,9 +56,6 @@ class Layouts extends Component {
             </Footer>
             <BackTop />
           </div>
-        ) : (
-          <Index />
-        )}
       </div>
     );
   }

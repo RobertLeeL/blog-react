@@ -45,6 +45,7 @@ class Archive extends Component {
             })
             .then(res => {
                 let num = this.state.pageNum;
+                console.log(res);
                 if (res.status === 200 && res.data.code === 0) {
                     this.setState({
                         list: this.state.list.concat(res.data.data.list),
@@ -67,43 +68,40 @@ class Archive extends Component {
     };
 
     render() {
-        const list = this.state.list.map((item, i) => ( <
-                Timeline.Item key = { i }
-                color = { 'red' }
-                dot = { < Icon type = "clock-circle-o"
-                    style = {
-                        { fontSize: '16px' } }
-                    />} >
-                    <h1> { item.year } </h1> 
-                    {
-                        item.list.map(ele => {
-                            return ( 
-                            <Timeline key = { ele._id } >
-                                <Timeline.Item >
-                                    <Link className = "title"
-                                    target = "_blank"
-                                    to = { `/articleDetail?article_id=${ele._id}` } >
-                                        <h3> { ele.title } </h3> 
-                                    </Link> 
-                                    <p>
-                                        <span> {
-                                            ele.create_time ?
-                                            timestampToTime(ele.create_time, true) : ''
-                                        } 
-                                        </span> 
-                                    </p> 
-                                </Timeline.Item>
-                            </Timeline>
-                            );
-                        })
-                    } </Timeline.Item>
-                ));
-
-            return ( 
-                <div className = "archive" >
-                <Timeline > { list } </Timeline> { this.state.isLoading ? < LoadingCom / > : '' } 
-                </div>
-            );
+        const list = this.state.list.map((item, i) => ( 
+					<Timeline.Item key = {i}
+            color = {'red'}
+            dot = {<Icon type="clock-circle-o" style={{ fontSize: '16px' }}/>} 
+					>
+          	<h1>{item.year}</h1> 
+            {
+              item.list.map(ele => {
+              	return ( 
+                  <Timeline key={ ele._id } >
+										<Timeline.Item>
+											<Link className="title"
+												target = "_blank"
+												to = { `/articleDetail?article_id=${ele._id}` } 
+											>
+												<h3>{ele.title}</h3> 
+                      </Link> 
+											<p>
+												<span> {
+													ele.create_time ? timestampToTime(ele.create_time, true) : ''} 
+												</span> 
+											</p> 
+										</Timeline.Item>
+									</Timeline>
+								);
+							})
+            } 
+					</Timeline.Item>
+				));
+					return ( 
+							<div className="archive" >
+								<Timeline>{ list }</Timeline> { this.state.isLoading ? <LoadingCom /> : '' } 
+							</div>
+					);
         }
     }
 
